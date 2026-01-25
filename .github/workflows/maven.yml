@@ -4,8 +4,6 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ master, develop ]
   pull_request:
     branches: [ master, develop ]
 
@@ -21,6 +19,6 @@ jobs:
       with:
         java-version: 21
     - name: Enforce project version
-      run: mvn enforcer:enforce@${{ github.head_ref }}
+      run: mvn enforcer:enforce@${{ github.base_ref }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
