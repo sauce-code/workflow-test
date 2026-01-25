@@ -48,7 +48,7 @@
                                 <requireProperty>
                                     <property>revision</property>
                                     <message>Property 'revision' is required.</message>
-                                    <regex>develop-SNAPSHO</regex>
+                                    <regex>develop-SNAPSHOT</regex>
                                     <regexMessage>Property 'revision' needs to be equal to 'develop-SNAPSHOT'.</regexMessage>
                                 </requireProperty>
                             </rules>
