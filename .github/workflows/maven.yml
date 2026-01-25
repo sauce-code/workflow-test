@@ -21,6 +21,6 @@ jobs:
       with:
         java-version: 21
     - name: Enforce project version
-      run: mvn enforcer:enforce@${{ GITHUB_REF }}
+      run: mvn enforcer:enforce@${{ github.head_ref }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
