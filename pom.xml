@@ -6,12 +6,59 @@
 
     <groupId>org.example</groupId>
     <artifactId>workflow-test</artifactId>
-    <version>0.0.1</version>
+    <version>${revision}</version>
 
     <properties>
+        <revision>develop-SNAPSHOT</revision>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.6.2</version>
+                <executions>
+                    <execution>
+                        <id>master</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>none</phase>
+                        <configuration>
+                            <rules>
+                                <requireProperty>
+                                    <property>revision</property>
+                                    <message>Property 'revision' is required.</message>
+                                    <regex>^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)</regex>
+                                    <regexMessage>Property 'revision' needs to match pattern 'X.X.X'.</regexMessage>
+                                </requireProperty>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>develop</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>none</phase>
+                        <configuration>
+                            <rules>
+                                <requireProperty>
+                                    <property>revision</property>
+                                    <message>Property 'revision' is required.</message>
+                                    <regex>develop-SNAPSHOT</regex>
+                                    <regexMessage>Property 'revision' needs to be equal to 'develop-SNAPSHOT'.</regexMessage>
+                                </requireProperty>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
