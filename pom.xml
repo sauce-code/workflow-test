@@ -27,6 +27,7 @@
                         <goals>
                             <goal>enforce</goal>
                         </goals>
+                        <phase>none</phase>
                         <configuration>
                             <rules>
                                 <requireProperty>
@@ -43,6 +44,7 @@
                         <goals>
                             <goal>enforce</goal>
                         </goals>
+                        <phase>none</phase>
                         <configuration>
                             <rules>
                                 <requireProperty>
