@@ -20,5 +20,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 21
+    - name: Enforce project version
+      if: github.base_ref == 'master'
+      run: mvn enforcer:enforce@master
+    - name: Enforce project version
+      if: github.base_ref == 'develop'
+      run: mvn enforcer:enforce@develop
     - name: Build with Maven
       run: mvn -B package --file pom.xml
