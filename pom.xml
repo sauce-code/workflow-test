@@ -9,7 +9,7 @@
     <version>${revision}</version>
 
     <properties>
-        <revision>0.3.0</revision>
+        <revision>0.4.0</revision>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,7 +34,7 @@
                                     <property>revision</property>
                                     <message>Property 'revision' is required.</message>
                                     <regex>^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)</regex>
-                                    <regexMessage>Property 'revision' needs to match pattern 'X.X.X'.</regexMessage>
+                                    <regexMessage>Property 'revision' needs to match Semantic Versioning 2.0.0 pattern.</regexMessage>
                                 </requireProperty>
                             </rules>
                         </configuration>
