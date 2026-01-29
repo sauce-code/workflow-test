@@ -34,7 +34,7 @@
                                     <property>revision</property>
                                     <message>Property 'revision' is required.</message>
                                     <regex>^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)</regex>
-                                    <regexMessage>Property 'revision' needs to match pattern 'X.X.X'.</regexMessage>
+                                    <regexMessage>Property 'revision' needs to match Semantic Versioning 2.0.0 pattern.</regexMessage>
                                 </requireProperty>
                             </rules>
                         </configuration>
